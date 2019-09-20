@@ -1,0 +1,28 @@
+<div class="bookkeeper">
+  <h1 class="title">Book Keeper</h1>
+  <div class="searchDiv">
+    <input type="text" class="search" (value)="bookSearch" (change)="bookGet($event)">
+  </div>
+  <div class="bookList" *ngIf="!showBook">
+    <div *ngFor="let item of bookList">
+      <span class="book" (click)="booKTag(item.edition_key[0])">{{item.title}}</span>
+    </div>
+  </div>
+  <div *ngIf="showBook">
+    <button (click)="clickBack()">BACK</button>
+    <div>
+      {{currentBook.title}}
+    </div>
+    <div>
+      {{currentBook.notes}}
+    </div>
+    <div>
+      {{currentBook.publish_date}}
+    </div>
+    <div>
+        {{currentBook.url}}
+      </div>
+    
+  </div>
+  <router-outlet></router-outlet>
+</div>
