@@ -13,6 +13,7 @@ export class DashboardComponent {
   title = "bookkeeper";
   bookSearch: string = "";
   bookList: BOOK[] = [];
+  showResult:boolean = false;
   constructor(
     private router: Router,
     private bookService: BookService,
@@ -24,15 +25,9 @@ export class DashboardComponent {
     if (!localStorage.getItem("accessToken")) {
       this.router.navigate(["login"]);
     }
+    this.showResult = false;
     this.bookList = this.bookService.getBookList();
-    if (!this.bookList || (this.bookList && this.bookList.length == 0)) {
-        const randSearch=["spring boot", "java", "reactjs", "javascript", "angularjs"];
-        
-        this.bookService.getBooks(randSearch[Math.floor(Math.random()*5)]).subscribe((data: any) => {
-        this.bookList = data.docs;
-        this.bookService.setBookList(this.bookList);
-      });
-    }
+    
   }
   gotoFav() {
     this.router.navigate(["favoriteList"]);
@@ -41,6 +36,7 @@ export class DashboardComponent {
     console.log(this.bookSearch);
     this.bookService.getBooks(this.bookSearch).subscribe((data: any) => {
       this.bookList = data.docs;
+      this.showResult = true;
       this.bookService.setBookList(this.bookList);
     });
   }

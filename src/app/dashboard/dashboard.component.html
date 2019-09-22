@@ -3,7 +3,8 @@
     Welcome {{user}}
     <button (click)="logOut()">LOG OUT</button>
 </div>
-  <div class="searchDiv">
+
+  <div *ngIf="showResult" class="searchDiv">
     <input
       type="text"
       class="search"
@@ -12,7 +13,15 @@
     <button (click)="bookGet()">Search</button>
   </div>
   <div class="favLink"><span (click)="gotoFav()">Favorite List</span></div>
-  <div class="bookContainer">
+  <div class="googleBar" *ngIf="!showResult">
+      <input
+        type="text"
+        class="search"
+        [(ngModel)]="bookSearch"
+      />
+      <button (click)="bookGet()">Search</button>
+  </div>
+  <div *ngIf="showResult" class="bookContainer">
     <div class="bookList">
       <div *ngFor="let item of bookList">
           <div class="bookItem">
