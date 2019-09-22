@@ -29,6 +29,9 @@ export class FavoritListComponent implements OnInit {
     this.bookService.setCurrentBook(item);
     this.router.navigate(["bookDetail"]);
   }
+  clickBack() {
+    this.router.navigate(["dashboard"]);
+  }
   logOut() {
     localStorage.removeItem("accessToken");
     this.router.navigate(["login"]);

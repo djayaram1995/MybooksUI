@@ -3,7 +3,7 @@
     Welcome {{user}}
     <button (click)="logOut()">LOG OUT</button>
 </div>
-
+<div class="favLink"><span (click)="gotoFav()">Favorite List</span></div>
   <div *ngIf="showResult" class="searchDiv">
     <input
       type="text"
@@ -12,7 +12,7 @@
     />
     <button (click)="bookGet()">Search</button>
   </div>
-  <div class="favLink"><span (click)="gotoFav()">Favorite List</span></div>
+ 
   <div class="googleBar" *ngIf="!showResult">
       <input
         type="text"

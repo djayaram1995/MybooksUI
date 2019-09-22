@@ -16,11 +16,16 @@
 
     border-bottom: 1px solid black;
 }
+.backButton {
+    margin-left: 50px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 20px;
+}
 .favList {
     margin-bottom: 25px;
     margin-top: 25px;
     text-align: center;
-    margin-left: 20%;
 }
 .bookContainer{
     min-height: 600px;

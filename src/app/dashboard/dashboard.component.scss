@@ -37,13 +37,15 @@
 }
 .user {
     margin-left: 50px;
+    font-size: 20px;
+    display: inline-block;
 }
 .favLink {
     margin: 0px 50px 40px 50px;
     text-decoration: underline;
-    font-size: 30px;
-    color: red;
+    font-size: 20px;
     cursor: pointer;
+    display: inline-block;
 }
 
 .googleBar {

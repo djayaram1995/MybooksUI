@@ -1,6 +1,7 @@
 .user {
     float: right;
     margin-right: 50px;
+    font-size: 20px;
 }
 .bookDetail {
     margin-top: 30px;
@@ -13,11 +14,16 @@
 .favLink {
     margin: 50px;
     text-decoration: underline;
-    font-size: 30px;
-    color: red;
+    font-size: 20px;
+    display: inline-block;
+    cursor: pointer;
 }
 .backButton {
-    margin-left: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 20px;
+    display: inline-block;
 }
 .bookUrl {
     word-wrap: break-word;
