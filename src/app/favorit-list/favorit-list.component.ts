@@ -18,6 +18,9 @@ export class FavoritListComponent implements OnInit {
     private userService: UserService) { }
   private user: string = this.userService.userId;
   ngOnInit() {
+    if (!localStorage.getItem("accessToken")) {
+      this.router.navigate(["login"]);
+    }
     this.favoriteService.getAllFavorite().subscribe(data => {
         this.favoriteList = data;
     })
