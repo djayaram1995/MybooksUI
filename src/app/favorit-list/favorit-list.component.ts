@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FavoriteService } from '../favorite.service';
 import { BOOK } from '../book';
 import { BookService } from '../book.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-favorit-list',
@@ -13,8 +14,9 @@ export class FavoritListComponent implements OnInit {
   private favoriteList: BOOK[]=[];
   constructor(private router: Router,
     private favoriteService: FavoriteService,
-    private bookService: BookService) { }
-
+    private bookService: BookService,
+    private userService: UserService) { }
+  private user: string = this.userService.userId;
   ngOnInit() {
     this.favoriteService.getAllFavorite().subscribe(data => {
         this.favoriteList = data;
