@@ -56,7 +56,9 @@ saveAsFavBook(favBook): Observable<any> {
   
   return this.http.post<any>(this.addToFavURL, favBook, this.httpOptions );
 }
-
+deleteBooklist() {
+   this.booklist = [];
+} 
 getAllFavList(): Observable<any> {
   return this.http.get<any>(this.bookListURL, this.httpOptions);
 }
