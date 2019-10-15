@@ -35,6 +35,7 @@ export class BookDetailComponent implements OnInit {
   }
   logOut() {
     localStorage.removeItem("accessToken");
+     this.bookService.deleteBooklist();
     this.router.navigate(["login"]);
   }
   gotoFav() {
