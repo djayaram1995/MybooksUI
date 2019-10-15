@@ -53,6 +53,7 @@ export class DashboardComponent {
   }
   logOut() {
     localStorage.removeItem("accessToken");
+    this.bookService.deleteBooklist();
     this.router.navigate(["login"]);
   }
 }
